@@ -755,43 +755,58 @@
   }
   .depo-grid{
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:36px;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+    max-width:1140px;
+    margin-left:auto;
+    margin-right:auto;
+    align-items:stretch;
   }
   .depo-card{
-    padding:36px 32px;
+    padding:34px 28px 28px;
     background:var(--glass-bg);
     backdrop-filter:blur(16px) saturate(160%);
     -webkit-backdrop-filter:blur(16px) saturate(160%);
     border:1px solid var(--glass-border);
-    border-radius:6px;
+    border-radius:12px;
     position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
     transition:transform .3s ease, box-shadow .3s ease;
   }
   .depo-card:hover{transform:translateY(-6px); box-shadow:0 22px 40px rgba(30,26,18,0.12);}
   .depo-card::before{
     content:"\201C";
-    position:absolute; top:12px; right:22px;
+    position:absolute; top:10px; right:20px;
     font-family:'Cormorant Garamond', serif;
     font-size:3.4rem;
     color:var(--gold-soft);
     line-height:1;
     opacity:0.8;
+    pointer-events:none;
   }
   .depo-card p.quote{
     font-family:'Cormorant Garamond', serif;
     font-style:italic;
-    font-size:1.28rem;
-    line-height:1.5;
+    font-size:1.15rem;
+    line-height:1.55;
     color:var(--green-deep);
-    margin-bottom:22px;
+    margin-bottom:20px;
+    position:relative;
+    z-index:1;
   }
-  .depo-card .who{font-size:0.88rem; color:#6b6459;}
-  .depo-card .who strong{color:var(--ink); font-weight:500;}
-  .depo-grid{max-width:860px; margin-left:auto; margin-right:auto; align-items:start;}
-  .depo-card-screenshot{padding:0; overflow:hidden;}
-  .depo-card-screenshot::before{display:none;}
-  .depo-card-screenshot img{width:100%; height:auto; object-fit:initial; display:block; border-radius:5px;}
+  .depo-card .who{
+    font-size:0.88rem;
+    color:#6b6459;
+    font-family:'Jost', sans-serif;
+    margin-top:auto;
+    padding-top:14px;
+    border-top:1px solid rgba(36,42,29,0.08);
+    position:relative;
+    z-index:1;
+  }
+  .depo-card .who strong{color:var(--ink); font-weight:600;}
 
   /* step de cuidado — imagem completa, sem coluna de texto */
   .step-cuidado{
@@ -936,7 +951,7 @@
   /* ========== TABLET: 601px–900px ========== */
   @media (min-width: 601px) and (max-width: 900px){
     .steps{grid-template-columns:repeat(2, 1fr); gap:24px; max-width:none; margin-left:0;}
-    .depo-grid{grid-template-columns:repeat(2, 1fr); gap:22px;}
+    .depo-grid{grid-template-columns:1fr; max-width:540px; gap:22px; margin-left:auto; margin-right:auto;}
     .coverflow{height:400px;}
     .cf-slide{width:260px; height:350px;}
     .processo-head{max-width:100%; margin-left:0;}
@@ -2002,11 +2017,17 @@
       <h2 style="font-size:clamp(1.9rem,3.2vw,2.5rem);">O que as noivas dizem</h2>
     </div>
     <div class="depo-grid">
-      <div class="depo-card depo-card-screenshot reveal">
-        <img src="assets/embedded/depo-whatsapp-1.jpg" alt="Mensagem de noiva agradecendo pelo buquê: Ele ficou lindo, impecavel! Obrigada de coração!" loading="lazy" decoding="async" width="900" height="341">
+      <div class="depo-card reveal">
+        <p class="quote">“Rosinha, tudo bem? Passando só pra agradecer pelo meu buquê! Ele ficou lindo, impecável! Obrigada de coração! Deus abençoe sempre. Beijos 🥰🌹”</p>
+        <div class="who"><strong>Noiva</strong> — Mensagem no WhatsApp</div>
       </div>
-      <div class="depo-card depo-card-screenshot reveal">
-        <img src="assets/embedded/depo-noiva-feliz.jpg" alt="Avaliação de noiva: O buquê então, está comigo até hoje — ele foi perfeito demais. 5 estrelas." loading="lazy" decoding="async" width="900" height="553">
+      <div class="depo-card reveal">
+        <p class="quote">“O buquê então, está comigo até hoje... Não tive coragem de jogar fora 😅 Ele foi perfeito demais!”</p>
+        <div class="who"><strong>Noiva</strong> — Avaliação no WhatsApp</div>
+      </div>
+      <div class="depo-card reveal">
+        <p class="quote">“Não posso deixar de reforçar aqui a minha gratidão e alegria por ter conhecido o trabalho de vocês ❤️ Desde o início se mostraram muito cuidadosos com tudo e o buquê, mini buquês e lapelas entregues estavam lindos 💐🤩 Todos nós AMAMOS, já estamos com saudades de tudo... Obrigada por deixarem o nosso sonho mais especial e memorável! Desejo um mundo de coisas lindas para a sua vida e toda família ❤️”</p>
+        <div class="who"><strong>Yukari Yamauchi</strong> — Noiva</div>
       </div>
     </div>
   </div>
